@@ -1,0 +1,6 @@
+FROM ubuntu:22.04
+RUN apt-get update && apt-get install -y apache2
+RUN apt-get install -y tree openssh-server openssh-client
+RUN cd /var/www/html
+RUN echo "Welcome to Devops" > /var/www/html/index.html
+RUN service apache2 start
