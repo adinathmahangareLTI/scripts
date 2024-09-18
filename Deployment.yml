@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: Sanjaya-web
+  namespace: prod
+spec:
+  selector:
+    matchLabels:
+      run: Sanjaya-web
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: Sanjaya-web
+    spec:
+      containers:
+      - name: webserver
+        image: nginx
+        ports:
+        - containerPort: 80
